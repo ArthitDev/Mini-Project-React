@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import NotFound from './components/NotFound'
 import Home from './components/Home'
+import MovieDetail from './components/MovieDetail'
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='/movie/:id' element={<MovieDetail />} />
         </Routes>
       </div>
       <div className='footer'>

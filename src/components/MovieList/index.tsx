@@ -1,15 +1,13 @@
-import { Movie } from '../../models/movie.model'
+import { useSelector } from 'react-redux'
+import MovieCard from '../MovieCard'
 import './MovieList.scss'
-import React from 'react'
+import { RootState } from '../../store/store'
 
-type Props = {
-    movies?: Movie
-}
-
-const MovieList = ({movies}: Props) => {
+const MovieList = () => {
+  const {movies} = useSelector((state:RootState) => state.movies)
   return (
     <div className='movie-container'>
-        
+      {movies && movies.map((movie) => <MovieCard key={movie.imdbID} movie={movie} />)}
     </div>
   )
 }
